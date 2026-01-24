@@ -5,7 +5,10 @@ symbols = ["BAR", "BELL", "LEMON", "CHERRY"]
 
 
 def slot_machine():
-    return [random.choice(symbols) for _ in range(3)]
+    result = []
+    for i in range(3):
+        result.append(random.choice(symbols))
+    return result
 
 
 def payout(s):
@@ -24,6 +27,7 @@ def payout(s):
         return 1
     return 0
 
+
 def plays_until_broke(start=10):
     bankroll = start
     plays = 0
@@ -35,10 +39,9 @@ def plays_until_broke(start=10):
     return plays
 
 
-total_plays = np.zeros(10000)
+total_plays = np.zeros(5000)
 # simulate
-for i in range(10000):
-    
+for i in range(5000):
     plays = plays_until_broke()
     total_plays[i] = plays
 # mean
