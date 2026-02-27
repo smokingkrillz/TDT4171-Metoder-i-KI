@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Flight_Ticket_Price">
+			<state id="Cheap" />
+			<state id="Expensive" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Weather">
+			<state id="Sunny" />
+			<state id="Rainy" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Language">
+			<state id="Known" />
+			<state id="Unknown" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Crowd">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Living_Expenses">
+			<state id="Cheap" />
+			<state id="Expensive" />
+			<probabilities>0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="Willing_Friend">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Travel_Duration">
+			<state id="Long" />
+			<state id="Short" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<decision id="Norway_vacation_or_International_Vacation">
+			<state id="Norway" />
+			<state id="International" />
+		</decision>
+		<cpt id="Cheap">
+			<state id="Cheap_Vacation" />
+			<state id="Expensive_Vacation" />
+			<parents>Flight_Ticket_Price Living_Expenses Norway_vacation_or_International_Vacation</parents>
+			<probabilities>0.8 0.2 0.9 0.1 0.5 0.5 0.6 0.4 0.4 0.6 0.5 0.5 0.2 0.8 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Enjoyment">
+			<state id="Fun" />
+			<state id="Not_Fun" />
+			<parents>Weather Crowd Willing_Friend Travel_Duration Norway_vacation_or_International_Vacation</parents>
+			<probabilities>0.7 0.3 0.65 0.35 0.75 0.25 0.8 0.2 0.4 0.6 0.45 0.55 0.45 0.55 0.5 0.5 0.9 0.1 0.95 0.05 1 0 0.99 0.01 0.88 0.12 0.82 0.18 0.75 0.25 0.79 0.21 0.25 0.75 0.4 0.6 0.3 0.7 0.45 0.55 0.03 0.97 0.15 0.85 0.1 0.9 0.2 0.8 0.38 0.62 0.42 0.58 0.6899999999999999 0.31 0.75 0.25 0.2 0.8 0.23 0.77 0.21 0.79 0.24 0.76</probabilities>
+		</cpt>
+		<cpt id="Ease">
+			<state id="Easy" />
+			<state id="Stressful" />
+			<parents>Language Travel_Duration Norway_vacation_or_International_Vacation</parents>
+			<probabilities>0.9 0.1 0.79 0.21 0.95 0.05 0.98 0.02 0.99 0.01 0.85 0.15 1 0 0.88 0.12</probabilities>
+		</cpt>
+		<utility id="U">
+			<parents>Cheap Enjoyment Ease</parents>
+			<utilities>1 0.6 0.6 0.2 0.8 0.4 0.4 0</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.5310.0 ACADEMIC" name="Network1">
+			<node id="Flight_Ticket_Price">
+				<name>Flight Ticket Price</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>152 19 300 114</position>
+				<barchart active="true" />
+			</node>
+			<node id="Weather">
+				<name>Weather</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>154 125 302 220</position>
+				<barchart active="true" />
+			</node>
+			<node id="Language">
+				<name>Language</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>152 227 300 322</position>
+				<barchart active="true" />
+			</node>
+			<node id="Crowd">
+				<name>Crowd</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>152 330 300 425</position>
+				<barchart active="true" />
+			</node>
+			<node id="Living_Expenses">
+				<name>Living Expenses</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>150 432 308 532</position>
+				<barchart active="true" />
+			</node>
+			<node id="Willing_Friend">
+				<name>Willing Friend</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>154 643 317 741</position>
+				<barchart active="true" />
+			</node>
+			<node id="Travel_Duration">
+				<name>Travel Duration</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>148 539 306 638</position>
+				<barchart active="true" />
+			</node>
+			<node id="Cheap">
+				<name>Cheap</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>481 145 629 240</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Enjoyment">
+				<name>Enjoyment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>484 263 632 358</position>
+				<barchart active="true" />
+			</node>
+			<node id="Ease">
+				<name>Ease</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>485 388 633 483</position>
+				<barchart active="true" />
+			</node>
+			<node id="U">
+				<name>U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>717 329 851 411</position>
+				<barchart active="true" width="155" height="47" />
+			</node>
+			<node id="Norway_vacation_or_International_Vacation">
+				<name>Norway vacation or International Vacation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>437 42 532 96</position>
+				<barchart active="true" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
